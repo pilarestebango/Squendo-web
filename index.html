@@ -32,24 +32,25 @@
 
   /* ── Animated ambient glow + grid (the app's signature bg) ── */
   .bg{position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none}
-  .blob{position:absolute; border-radius:50%; filter:blur(90px); will-change:transform,opacity}
-  .blob.b1{width:80vw;height:80vw;left:-20vw;top:-24vw;background:radial-gradient(circle at center,var(--glow-blue),transparent 68%);animation:drift1 19s ease-in-out infinite}
-  .blob.b2{width:82vw;height:82vw;right:-20vw;top:-28vw;background:radial-gradient(circle at center,var(--glow-purple),transparent 68%);animation:drift2 23s ease-in-out infinite}
-  .blob.b3{width:66vw;height:66vw;left:16vw;top:36vh;background:radial-gradient(circle at center,var(--purple),transparent 70%);animation:drift3 27s ease-in-out infinite}
-  .grid{position:fixed; inset:0; z-index:-1; pointer-events:none;
-    background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  .blob{position:absolute; border-radius:50%; filter:blur(78px); will-change:transform,opacity}
+  .blob.b1{width:85vw;height:85vw;left:-22vw;top:-26vw;background:radial-gradient(circle at center,var(--glow-blue),transparent 64%);animation:drift1 13s ease-in-out infinite}
+  .blob.b2{width:90vw;height:90vw;right:-24vw;top:-30vw;background:radial-gradient(circle at center,var(--glow-purple),transparent 64%);animation:drift2 15s ease-in-out infinite}
+  .blob.b3{width:74vw;height:74vw;left:10vw;top:30vh;background:radial-gradient(circle at center,var(--magenta),transparent 66%);animation:drift3 17s ease-in-out infinite}
+  .grid{position:fixed; inset:0; z-index:-1; pointer-events:none; animation:gridpan 26s linear infinite;
+    background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
     background-size:64px 64px; mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%); -webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%);}
-  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(15vw,11vh) scale(1.3);opacity:.72}}
-  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(-14vw,12vh) scale(1.24);opacity:.75}}
-  @keyframes drift3{0%,100%{transform:translate(0,0) scale(1);opacity:.24}50%{transform:translate(12vw,-10vh) scale(1.35);opacity:.46}}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);opacity:.4}50%{transform:translate(28vw,20vh) scale(1.6);opacity:.9}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1.1);opacity:.45}50%{transform:translate(-26vw,22vh) scale(1.5);opacity:.95}}
+  @keyframes drift3{0%,100%{transform:translate(0,0) scale(.8);opacity:.1}50%{transform:translate(24vw,-18vh) scale(1.55);opacity:.66}}
+  @keyframes gridpan{from{background-position:0 0}to{background-position:64px 64px}}
 
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
 
   /* ── Hero ── */
   .hero{position:relative; z-index:1; text-align:center; padding:104px 24px 80px; display:flex; flex-direction:column; align-items:center}
-  .hero .logo{width:min(300px,68vw); margin-bottom:46px}
+  .hero .logo{width:min(270px,61vw); margin-bottom:68px}
   .hero h1{font-weight:800; letter-spacing:-.02em; line-height:1.06; font-size:clamp(26px,6.2vw,66px); overflow-wrap:break-word; width:100%}
-  .hero h1 .l2{background:linear-gradient(90deg,var(--magenta),#a56bff); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .hero h1 .l2{color:var(--paper)}
   .hero p.sub{color:var(--muted); font-size:clamp(15px,2.4vw,20px); max-width:560px; margin:22px auto 0}
   .cta{display:inline-flex; align-items:center; justify-content:center; gap:10px; margin-top:38px; max-width:100%; background:var(--paper); color:var(--ink);
     font-weight:800; font-size:clamp(15px,3.6vw,17px); padding:17px clamp(20px,5vw,34px); border-radius:999px; text-decoration:none; text-align:center;
@@ -57,7 +58,7 @@
   .cta:hover{transform:translateY(-2px); box-shadow:0 18px 52px rgba(247,0,99,.4)}
   .cta svg{width:19px;height:19px}
   .microcopy{margin-top:16px; color:var(--faint); font-size:13px; font-weight:500}
-  .hero-mark{width:130px; opacity:.82; margin-top:50px}
+  .hero-mark{width:117px; opacity:1; margin-top:10px}
 
   /* ── Features ── */
   .features{position:relative; z-index:1; padding:40px 0 40px}
