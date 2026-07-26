@@ -32,27 +32,21 @@
 
   /* ── Animated ambient glow + grid (the app's signature bg) ── */
   .bg{position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none}
-  .blob{position:absolute; border-radius:50%; filter:blur(90px); opacity:.55; will-change:transform}
-  .blob.b1{width:70vw;height:70vw;left:-15vw;top:-20vw;background:radial-gradient(circle at center,var(--glow-blue),transparent 70%);animation:drift1 26s ease-in-out infinite}
-  .blob.b2{width:70vw;height:70vw;right:-15vw;top:-25vw;background:radial-gradient(circle at center,var(--glow-purple),transparent 70%);animation:drift2 30s ease-in-out infinite}
-  .blob.b3{width:60vw;height:60vw;left:20vw;top:40vh;background:radial-gradient(circle at center,var(--purple),transparent 70%);opacity:.28;animation:drift1 34s ease-in-out infinite reverse}
+  .blob{position:absolute; border-radius:50%; filter:blur(90px); will-change:transform,opacity}
+  .blob.b1{width:80vw;height:80vw;left:-20vw;top:-24vw;background:radial-gradient(circle at center,var(--glow-blue),transparent 68%);animation:drift1 19s ease-in-out infinite}
+  .blob.b2{width:82vw;height:82vw;right:-20vw;top:-28vw;background:radial-gradient(circle at center,var(--glow-purple),transparent 68%);animation:drift2 23s ease-in-out infinite}
+  .blob.b3{width:66vw;height:66vw;left:16vw;top:36vh;background:radial-gradient(circle at center,var(--purple),transparent 70%);animation:drift3 27s ease-in-out infinite}
   .grid{position:fixed; inset:0; z-index:-1; pointer-events:none;
     background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
     background-size:64px 64px; mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%); -webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%);}
-  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.12)}}
-  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-5vw,5vh) scale(1.1)}}
+  @keyframes drift1{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(15vw,11vh) scale(1.3);opacity:.72}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(-14vw,12vh) scale(1.24);opacity:.75}}
+  @keyframes drift3{0%,100%{transform:translate(0,0) scale(1);opacity:.24}50%{transform:translate(12vw,-10vh) scale(1.35);opacity:.46}}
 
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
 
-  /* ── Nav ── */
-  nav{position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:22px 24px; max-width:var(--maxw); margin:0 auto}
-  nav .brand{display:flex; align-items:center; gap:10px}
-  nav .brand img{height:22px}
-  nav a.nav-cta{font-weight:700; font-size:14px; color:var(--paper); text-decoration:none; padding:9px 18px; border:1px solid var(--stroke); border-radius:999px; background:var(--glass); transition:.2s}
-  nav a.nav-cta:hover{background:var(--glass2); transform:translateY(-1px)}
-
   /* ── Hero ── */
-  .hero{position:relative; z-index:1; text-align:center; padding:64px 24px 80px; display:flex; flex-direction:column; align-items:center}
+  .hero{position:relative; z-index:1; text-align:center; padding:104px 24px 80px; display:flex; flex-direction:column; align-items:center}
   .hero .logo{width:min(300px,68vw); margin-bottom:46px}
   .hero h1{font-weight:800; letter-spacing:-.02em; line-height:1.06; font-size:clamp(26px,6.2vw,66px); overflow-wrap:break-word; width:100%}
   .hero h1 .l2{background:linear-gradient(90deg,var(--magenta),#a56bff); -webkit-background-clip:text; background-clip:text; color:transparent}
@@ -63,9 +57,7 @@
   .cta:hover{transform:translateY(-2px); box-shadow:0 18px 52px rgba(247,0,99,.4)}
   .cta svg{width:19px;height:19px}
   .microcopy{margin-top:16px; color:var(--faint); font-size:13px; font-weight:500}
-  .dots{display:flex; gap:12px; margin-top:46px}
-  .dots span{width:12px;height:12px;border-radius:50%}
-  .dots .p{background:var(--purple)} .dots .g{background:var(--green)} .dots .b{background:var(--blue)} .dots .r{background:var(--red)}
+  .hero-mark{width:130px; opacity:.82; margin-top:50px}
 
   /* ── Features ── */
   .features{position:relative; z-index:1; padding:40px 0 40px}
@@ -116,21 +108,15 @@
   </div>
   <div class="grid" aria-hidden="true"></div>
 
-  <nav>
-    <span class="brand"><img src="assets/logo.png" alt="Squendo"></span>
-    <a class="nav-cta" href="https://apps.apple.com/app/id6785156887">Download</a>
-  </nav>
-
   <header class="hero">
-    <img class="logo" src="assets/logo.png" alt="Squendo">
+    <img class="logo" src="assets/logo.svg" alt="Squendo">
     <h1>Easy to pick up.<br><span class="l2">Impossible to put&nbsp;down.</span></h1>
-    <p class="sub">The witty tile-strategy game of matching edges, sneaky stacks, and last-second squares. Simple pieces — deliciously deep play.</p>
+    <p class="sub">The witty tile-strategy game of matching edges, sneaky stacks, and last-second squares. Simple pieces, deliciously deep play.</p>
     <a class="cta" href="https://apps.apple.com/app/id6785156887">
       <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       Download on the App Store
     </a>
-    <p class="microcopy">Free to try — your first 10 games are on us · iPhone &amp; iPad</p>
-    <div class="dots" aria-hidden="true"><span class="p"></span><span class="g"></span><span class="b"></span><span class="r"></span></div>
+    <img class="hero-mark" src="assets/xoxo.svg" alt="" aria-hidden="true">
   </header>
 
   <section class="features">
@@ -175,7 +161,7 @@
 
   <footer>
     <div class="inner">
-      <img src="assets/symbol.png" alt="Squendo">
+      <img src="assets/xoxo.svg" alt="Squendo">
       <div class="links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="mailto:pilar.esteban@gmail.com">Contact</a>
