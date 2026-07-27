@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["RCZ4C52366.com.squendo.app"],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Squendo multiplayer invite — open the app straight into the lobby"
+          }
+        ]
+      }
+    ]
+  }
+}
