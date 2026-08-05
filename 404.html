@@ -73,9 +73,31 @@
         try { localStorage.setItem("squendo.invite", code); } catch (e) {}
       }
 
-      // If this is a join link, send them to the App Store automatically after a beat.
       if (i >= 0) {
-        setTimeout(function () { location.replace(STORE_URL); }, 2200);
+        // Try to hand off to the installed app via its custom scheme first.
+        // If Squendo is installed it takes over here (parsing squendo://join/<code>
+        // straight into the lobby); the browser tab is backgrounded, which we detect
+        // below to cancel the store redirect. If it's NOT installed nothing happens
+        // and we fall through to the App Store.
+        var appLink = code
+          ? "squendo://join/" + encodeURIComponent(code)
+          : "squendo://";
+        var handedOff = false;
+        var markHandedOff = function () { handedOff = true; };
+        // The app opening hides/blurs this page — that's our "it worked" signal.
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) markHandedOff();
+        });
+        window.addEventListener("pagehide", markHandedOff);
+        window.addEventListener("blur", markHandedOff);
+
+        // Give listeners a tick to attach, then attempt the app.
+        setTimeout(function () { window.location.href = appLink; }, 50);
+
+        // If the app never took over, send them to the App Store.
+        setTimeout(function () {
+          if (!handedOff && !document.hidden) location.replace(STORE_URL);
+        }, 1500);
       }
     })();
   </script>
