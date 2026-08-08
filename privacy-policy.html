@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Squendo — Privacy Policy</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
   :root { color-scheme: light; }
   * { box-sizing: border-box; }
@@ -29,7 +32,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta"><strong>Squendo</strong> &middot; Last updated: 26 July 2026</p>
+  <p class="meta"><strong>Squendo</strong> &middot; Last updated: 8 August 2026</p>
 
   <p>
     This Privacy Policy explains how <strong>Squendo</strong> ("Squendo", "the app", "we", "us")
@@ -58,6 +61,22 @@
     <li>Basic device and diagnostic information necessary to operate, secure, and troubleshoot the service (for example, connection and error data).</li>
   </ul>
 
+  <h3>Usage &amp; analytics</h3>
+  <ul>
+    <li>
+      <strong>How the app is used</strong> — the screens you view, games you start and finish, the
+      difficulty and campaign level you played, whether you won, how long a game took, and similar
+      in-app actions. This is linked to a pseudonymous account identifier (a random ID), together
+      with your app version, operating system, and whether you are on a phone or a tablet.
+    </li>
+    <li>
+      We do <strong>not</strong> send your email address, your name, or your profile photo to our
+      analytics provider, and we do <strong>not</strong> collect your precise location or use any
+      advertising identifier.
+    </li>
+    <li>You can turn this off at any time in the app — see <a href="#rights">section 6</a>.</li>
+  </ul>
+
   <p>We do <strong>not</strong> use advertising, and we do <strong>not</strong> track you across other apps or websites.</p>
 
   <h2>2. How we use your information</h2>
@@ -66,20 +85,24 @@
     <li>To run single-player and online multiplayer games and show your name/colour to other players in a match.</li>
     <li>To save your campaign progress and profile across your devices.</li>
     <li>To operate, maintain, secure, and improve the app, and to comply with legal obligations.</li>
+    <li>To understand how the game is actually played — so we can balance difficulty, fix steps that confuse people, and decide what to build next.</li>
   </ul>
 
   <h2>3. Legal bases (EEA/UK users)</h2>
   <p>
     Where the GDPR applies, we process your information to <em>perform our contract</em> with you
     (providing the game and your account), for our <em>legitimate interests</em> (keeping the service
-    secure and functional), and to <em>comply with legal obligations</em>. You may withdraw consent
-    or object to certain processing as described in "Your rights" below.
+    secure and functional, and understanding how the game is played so we can improve it), and to
+    <em>comply with legal obligations</em>. You may withdraw consent or object to certain processing
+    as described in "Your rights" below. In particular, you can object to analytics processing at any
+    time by switching <strong>Usage analytics</strong> off in the app (Profile → Usage analytics).
   </p>
 
   <h2>4. How your information is shared</h2>
   <p>We do not sell your personal information. We share it only with the service providers needed to run Squendo:</p>
   <ul>
     <li><strong>Supabase</strong> — our backend provider, which hosts our authentication, database, and file storage (your account, profile, avatar, and game data).</li>
+    <li><strong>PostHog</strong> — our product-analytics provider (United States), which processes the pseudonymous usage events described in section 1 on our behalf. It does not receive your email address, name, or photo.</li>
     <li><strong>Apple</strong> — the App Store, which delivers the app.</li>
   </ul>
   <p>We may also disclose information if required by law, or to protect the rights, safety, and security of our users and the service.</p>
@@ -92,11 +115,12 @@
     may be retained in de-identified form for the integrity of the service.
   </p>
 
-  <h2>6. Your rights &amp; choices</h2>
+  <h2 id="rights">6. Your rights &amp; choices</h2>
   <p>You can:</p>
   <ul>
     <li><strong>Access and update</strong> your name and profile photo in the app at any time.</li>
-    <li><strong>Delete your account</strong> directly in the app (Profile → Delete account), which removes your associated personal data.</li>
+    <li><strong>Turn off usage analytics</strong> at any time in the app (Profile → Usage analytics). The game keeps working exactly the same.</li>
+    <li><strong>Delete your account</strong> directly in the app (Profile → Delete account), which removes your associated personal data, including your analytics record.</li>
     <li><strong>Request access, correction, or deletion</strong> of your personal information by contacting us at <a href="mailto:pilar.esteban@gmail.com">pilar.esteban@gmail.com</a>.</li>
   </ul>
   <p>
@@ -122,8 +146,11 @@
 
   <h2>9. International transfers</h2>
   <p>
-    Your information may be processed on servers located outside your country of residence. Where this
-    happens, we rely on our service providers' safeguards to protect your information consistent with this policy.
+    Your information may be processed on servers located outside your country of residence. In
+    particular, the pseudonymous usage events described in section 1 are processed by PostHog in the
+    <strong>United States</strong>. Where information is transferred internationally, we rely on our
+    service providers' safeguards — including, for EEA/UK users, the European Commission's Standard
+    Contractual Clauses — to protect your information consistent with this policy.
   </p>
 
   <h2>10. Service availability</h2>
