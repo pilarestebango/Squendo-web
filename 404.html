@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Join a Squendo game</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,7 +27,8 @@
       padding: 40px 28px;
       backdrop-filter: blur(20px);
     }
-    .mark { font-size: 28px; letter-spacing: 6px; margin-bottom: 20px; opacity: 0.9; }
+    .mark { display: flex; justify-content: center; margin-bottom: 22px; opacity: 0.95; }
+    .mark svg { width: 150px; height: auto; display: block; }
     h1 { font-size: 22px; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
     p { font-size: 15px; line-height: 1.5; opacity: 0.7; margin-bottom: 24px; }
     .code-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; margin-bottom: 6px; }
@@ -47,7 +51,14 @@
 </head>
 <body>
   <main class="card">
-    <div class="mark">✕●✕●</div>
+    <div class="mark" aria-label="Squendo">
+      <svg viewBox="0 0 614 113" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+        <path d="M358.723 1.82116C356.289 -0.606729 352.349 -0.606729 349.915 1.82116L329.155 22.5611C326.722 24.989 326.722 28.9259 329.155 31.3538L349.915 52.0937C352.349 54.5216 352.349 58.4585 349.915 60.8864L329.155 81.6263C326.722 84.0542 326.722 87.9911 329.155 90.419L349.915 111.159C352.349 113.587 356.289 113.587 358.723 111.159L379.482 90.419C381.916 87.9911 385.856 87.9911 388.29 90.419L409.049 111.159C411.483 113.587 415.423 113.587 417.857 111.159L438.616 90.419C441.05 87.9911 441.05 84.0542 438.616 81.6263L417.857 60.8864C415.423 58.4585 415.423 54.5216 417.857 52.0937L438.616 31.3538C441.05 28.9259 441.05 24.989 438.616 22.5611L417.857 1.82116C415.423 -0.606729 411.483 -0.606729 409.049 1.82116L388.29 22.5611C385.856 24.989 381.916 24.989 379.482 22.5611L358.723 1.82116Z" fill="white"/>
+        <path d="M31.3925 1.82116C28.9587 -0.606729 25.0184 -0.606729 22.5908 1.82116L1.82538 22.5611C-0.60846 24.989 -0.60846 28.9259 1.82538 31.3538L22.5908 52.0937C25.0184 54.5216 25.0184 58.4585 22.5908 60.8864L1.82538 81.6263C-0.60846 84.0542 -0.60846 87.9911 1.82538 90.419L22.5908 111.159C25.0184 113.587 28.9587 113.587 31.3925 111.159L52.158 90.419C54.5856 87.9911 58.5258 87.9911 60.9596 90.419L81.7251 111.159C84.1527 113.587 88.0929 113.587 90.5268 111.159L111.292 90.419C113.72 87.9911 113.72 84.0542 111.292 81.6263L90.5268 60.8864C88.0929 58.4585 88.0929 54.5216 90.5268 52.0937L111.292 31.3538C113.72 28.9259 113.72 24.989 111.292 22.5611L90.5268 1.82116C88.0929 -0.606729 84.1527 -0.606729 81.7251 1.82116L60.9596 22.5611C58.5258 24.989 54.5856 24.989 52.158 22.5611L31.3925 1.82116Z" fill="white"/>
+        <path d="M613.666 55.9565C613.666 86.8607 588.581 111.913 557.644 111.913C526.701 111.913 501.622 86.8607 501.622 55.9565C501.622 25.0523 526.701 0 557.644 0C588.581 0 613.666 25.0523 613.666 55.9565Z" fill="white"/>
+        <path d="M283.759 55.9565C283.759 86.8607 258.673 111.913 227.737 111.913C196.794 111.913 171.715 86.8607 171.715 55.9565C171.715 25.0523 196.794 0 227.737 0C258.673 0 283.759 25.0523 283.759 55.9565Z" fill="white"/>
+      </svg>
+    </div>
     <h1>You've been invited to Squendo!</h1>
     <p>Get the app to jump into the game.</p>
     <div class="code-label" id="codeLabel" hidden>Your game code</div>
